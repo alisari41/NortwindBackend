@@ -16,7 +16,7 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         //Context = Nesnelerimiz ile veri tabanımızın iletişimi kuran nesnedir.
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connectionString: @"***REMOVED***");
+            optionsBuilder.UseSqlServer(connectionString: @"");
             
         }
         public DbSet<Product> Products { get; set; }
