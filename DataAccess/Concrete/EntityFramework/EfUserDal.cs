@@ -19,15 +19,15 @@ namespace DataAccess.Concrete.EntityFramework
 
             using (var context = new NorthwindContext())
             {//Gelen User bilgilerinin join işlemleri ile rollerini listeledim
-                var result = from operationCalaim in context.OperationClaims
+                var result = from operationClaim in context.OperationClaims
                              join userOperationClaim in context.UserOperationClaims
-                                 on operationCalaim.Id equals userOperationClaim.OperationClaimId
+                                 on operationClaim.Id equals userOperationClaim.OperationClaimId
                              where userOperationClaim.UserId == user.Id//sınırlandırma yaptım
                              select new OperationClaim
                              {
                                  //Burdan bir operationclaim rol listesi döndürcem
-                                 Id = operationCalaim.Id,
-                                 Name = operationCalaim.Name
+                                 Id = operationClaim.Id,
+                                 Name = operationClaim.Name
                              };
                 return result.ToList();
             }
