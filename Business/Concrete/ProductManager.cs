@@ -102,8 +102,10 @@ namespace Business.Concrete
         private IResult CheckIfProductNameExists(string productName)
         {//Metodlar çoğunlukla IResult kullanılıyor dikkat et
 
+
             //Any metodu, bir koleksiyonda belirtilen koşula uygun kayıt varsa geriye true, yoksa false değerini döndürmektetedir.
             var result = _productDal.GetList(p => p.ProductName == productName).Any();
+
 
             if (result)
             {//Eğer girilen ürün adı sistemde varsa

@@ -19,6 +19,7 @@ namespace DataAccess.Concrete.EntityFramework
 
             using (var context = new NorthwindContext())
             {//Gelen User bilgilerinin join işlemleri ile rollerini listeledim
+
                 var result = from operationClaim in context.OperationClaims
                              join userOperationClaim in context.UserOperationClaims
                                  on operationClaim.Id equals userOperationClaim.OperationClaimId
@@ -28,6 +29,7 @@ namespace DataAccess.Concrete.EntityFramework
                                  //Burdan bir operationclaim rol listesi döndürcem
                                  Id = operationClaim.Id,
                                  Name = operationClaim.Name
+
                              };
                 return result.ToList();
             }

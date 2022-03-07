@@ -16,7 +16,10 @@ namespace DataAccess.Concrete.EntityFramework.Contexts
         //Context = Nesnelerimiz ile veri tabanımızın iletişimi kuran nesnedir.
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+
             optionsBuilder.UseSqlServer(connectionString: @"Server = tcp:mysampledatabase.database.windows.net,1433; Initial Catalog = mysampledatabase; Persist Security Info = False; User ID = azureuser; Password =ali1234*; MultipleActiveResultSets = False; Encrypt = True; TrustServerCertificate = False; Connection Timeout = 30;");
+
+
             
         }
         public DbSet<Product> Products { get; set; }
